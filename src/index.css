@@ -1,13 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;600;700;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Lexend";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+:root{
+  --primary-color:#10B981;
+  --secondary-color:#F59E0B;
+  --deep-blue:#1B1C57;
+  --success:#10B981;
+ --error:red;
+ --primary-rgba:rgb(16, 185, 129)
+}
+
+header{
+  color: var(--deep-blue);
+  font-weight: 600;
 }
