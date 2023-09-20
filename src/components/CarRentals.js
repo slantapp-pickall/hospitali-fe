@@ -18,9 +18,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRef, useState } from "react";
+import Prompt from "../pages/Prompt";
 
 export default function CarRentals() {
   const sliderRef = useRef(null);
+  const [getStarted, setGetStarted] = useState(false);
   const [scrolling, setScrolling] = useState({
     right: true,
     left: false,
@@ -113,7 +115,7 @@ export default function CarRentals() {
             <header>Dropoff</header>
             <p>Move from airport, bus and train stations to your apartment with ease</p>
           </div>
-          <button>Request</button>
+          <button onClick={() => setGetStarted(true)}>Request</button>
         </div>
 
         <div className="item">
@@ -124,7 +126,7 @@ export default function CarRentals() {
             <header>Private</header>
             <p>Rent a car for your duration of stay</p>
           </div>
-          <button>Request</button>
+          <button onClick={() => setGetStarted(true)}>Request</button>
         </div>
 
         <div className="item">
@@ -135,7 +137,7 @@ export default function CarRentals() {
             <header>Dispatch</header>
             <p>Move parcels around from the comfort of your residence</p>
           </div>
-          <button>Request </button>
+          <button onClick={() => setGetStarted(true)}>Request </button>
         </div>
 
 
@@ -150,7 +152,7 @@ export default function CarRentals() {
                 Need vehicles to move team(s) around town? We got you!
             </p>
           </div>
-            <button>Request</button>
+            <button onClick={() => setGetStarted(true)}>Request</button>
         </div>
 
 
@@ -211,6 +213,13 @@ export default function CarRentals() {
             );
           })}
         </Slider>
+      </div>
+
+
+      <div className="modals">
+      {getStarted ? (
+            <Prompt handleCloseModal={() => setGetStarted(false)} />
+          ) : null}
       </div>
     </div>
   );
