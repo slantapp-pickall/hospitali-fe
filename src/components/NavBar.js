@@ -32,7 +32,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <div className={isBackgroundColored?"background-colored":""}>
+    <div className={isBackgroundColored?"background-colored onmobile-bg":"onmobile-bg"}>
       <nav className={"nav-bar-container "} id="navBar">
         <div className="logo-section">
           <div className="logo">
