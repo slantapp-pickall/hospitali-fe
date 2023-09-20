@@ -51,6 +51,13 @@ export default function Recommendations() {
     });
     sliderRef.current.slickPrev();
   };
+
+  const [view, setView] = useState({
+    home: true,
+    villa: false,
+    apartment: false,
+  });
+
   return (
     <div className="recommendation-container">
       <header className="heading">
@@ -61,27 +68,45 @@ export default function Recommendations() {
         <header className="title">Apartment</header>
 
         <div className="button-section">
-          <button className="active-type">
+          <button
+            className={view.home ? "active-type" : ""}
+            onClick={() => {
+              setView({ ...view, home: true, villa: false, apartment: false });
+            }}
+          >
             {" "}
             <AiFillHome />
             Home
           </button>
-          <button>
+          <button
+            className={view.villa ? "active-type" : ""}
+            onClick={() => {
+              setView({ ...view, home: false, villa: true, apartment: false });
+            }}
+          >
             <MdOutlineVilla /> Villa
           </button>
-          <button>
+          <button
+            className={view.apartment ? "active-type" : ""}
+            onClick={() => {
+              setView({ ...view, home: false, villa: false, apartment: true });
+            }}
+          >
             <MdOutlineApartment />
             Apartment
           </button>
         </div>
 
         <div className="controls">
-          <div className={scrolling.left?" active-direction" :"direction"}>
-            <div className="icon" onClick={()=>prevSlide()}>
+          <div className={scrolling.left ? " active-direction" : "direction"}>
+            <div className="icon" onClick={() => prevSlide()}>
               <AiOutlineLeft />
             </div>
           </div>
-          <div className={scrolling.right?" active-direction" :"direction"} onClick={()=>nextSlide()} >
+          <div
+            className={scrolling.right ? " active-direction" : "direction"}
+            onClick={() => nextSlide()}
+          >
             {" "}
             <div className="icon">
               <AiOutlineRight />
@@ -92,33 +117,41 @@ export default function Recommendations() {
 
       <div className="listings-row">
         <Slider responsive={true} rows={1} ref={sliderRef} {...settings}>
-         {
-            apartments.map((item, i)=>{
-                return (
-                    <div className="listing" key={i} >
-                    <div className="image">
-                      <img src={item.image} alt="roselands house" />
-                      <div className="label">
-                        <img draggable="false" src={item.tag==="popular"?popular:item.tag==="new"?newListing:best_deal} alt="" />
-                      </div>
-                    </div>
-                    <div className="description">
-                      <div className="title">{item.title}</div>
-                      <div className="price">$ {item.price}</div>
-                    </div>
-                    <div className="owner-section">
-                      <div className="icon">
-                        <img src={favicon} alt="Homely" />
-                      </div>
-                      <div className="text-section">
-                        <b>Homely</b>
-                        <div className="subtitle">Manchester, Kentucky</div>
-                      </div>
-                    </div>
+          {apartments.map((item, i) => {
+            return (
+              <div className="listing" key={i}>
+                <div className="image">
+                  <img src={item.image} alt="roselands house" />
+                  <div className="label">
+                    <img
+                      draggable="false"
+                      src={
+                        item.tag === "popular"
+                          ? popular
+                          : item.tag === "new"
+                          ? newListing
+                          : best_deal
+                      }
+                      alt=""
+                    />
                   </div>
-                )
-            })
-         }
+                </div>
+                <div className="description">
+                  <div className="title">{item.title}</div>
+                  <div className="price">$ {item.price}</div>
+                </div>
+                <div className="owner-section">
+                  <div className="icon">
+                    <img src={favicon} alt="Homely" />
+                  </div>
+                  <div className="text-section">
+                    <b>Homely</b>
+                    <div className="subtitle">Manchester, Kentucky</div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </Slider>
       </div>
     </div>
@@ -131,20 +164,19 @@ const apartments = [
     price: "35,000,000",
     image: house1,
     tag: "popular",
-    type:"apartment",
+    type: "apartment",
     owner: {
       icon: "",
       name: "Homely",
     },
   },
 
-
   {
     title: "Woodlandside",
     price: "20,000,000",
     image: house2,
     tag: "new",
-    type:"apartment",
+    type: "apartment",
     owner: {
       icon: "",
       name: "Homely",
@@ -156,7 +188,7 @@ const apartments = [
     price: "44,000,000",
     image: house3,
     tag: "best_deal",
-    type:"apartment",
+    type: "apartment",
     owner: {
       icon: "",
       name: "Homely",
@@ -168,7 +200,7 @@ const apartments = [
     price: "20,000,000",
     image: house4,
     tag: "new",
-    type:"apartment",
+    type: "apartment",
     owner: {
       icon: "",
       name: "Homely",
@@ -180,20 +212,19 @@ const apartments = [
     price: "44,000,000",
     image: house3,
     tag: "best_deal",
-    type:"apartment",
+    type: "apartment",
     owner: {
       icon: "",
       name: "Homely",
     },
   },
 
-  
   {
     title: "Woodlandside",
     price: "20,000,000",
     image: house2,
     tag: "new",
-    type:"apartment",
+    type: "apartment",
     owner: {
       icon: "",
       name: "Homely",
