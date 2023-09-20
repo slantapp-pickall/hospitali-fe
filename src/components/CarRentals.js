@@ -29,6 +29,9 @@ export default function CarRentals() {
     slidesToShow: 3,
     slidesToScroll: 1,
     infinite: true,
+    autoplay:true,
+    autoplaySpeed: 2000,
+    rtl:false,
     responsive: [
       {
         breakpoint: 768,
@@ -79,9 +82,11 @@ export default function CarRentals() {
           </button>
         </div> */}
 
-        <div className="controls">
-          <div className={scrolling.left ? " active-direction" : "direction"}>
-            <div className="icon" onClick={() => prevSlide()}>
+        {/* <div className="controls">
+          <div className={scrolling.left ? " active-direction" : "direction"}
+          onClick={() => prevSlide()}
+          >
+            <div className="icon" >
               <AiOutlineLeft />
             </div>
           </div>
@@ -94,7 +99,7 @@ export default function CarRentals() {
               <AiOutlineRight />
             </div>{" "}
           </div>
-        </div>
+        </div> */}
       </nav>
 
       
@@ -159,8 +164,10 @@ export default function CarRentals() {
        
 
         <div className="controls">
-          <div className={scrolling.left ? " active-direction" : "direction"}>
-            <div className="icon" onClick={() => prevSlide()}>
+          <div className={scrolling.left ? " active-direction" : "direction"}
+          onClick={() => prevSlide()}
+          >
+            <div className="icon" >
               <AiOutlineLeft />
             </div>
           </div>

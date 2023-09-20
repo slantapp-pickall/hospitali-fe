@@ -98,8 +98,10 @@ export default function Recommendations() {
         </div>
 
         <div className="controls">
-          <div className={scrolling.left ? " active-direction" : "direction"}>
-            <div className="icon" onClick={() => prevSlide()}>
+          <div className={scrolling.left ? " active-direction" : "direction"}
+          onClick={() => prevSlide()}
+          >
+            <div className="icon" >
               <AiOutlineLeft />
             </div>
           </div>
