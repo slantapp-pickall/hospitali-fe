@@ -6,13 +6,23 @@
   box-sizing: border-box;
 }
 
+a{
+  color: white;
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   font-family: "Lexend";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fff;
+  color: #626687;
+  font-size: 14px;
+  font-weight: 300;
+  height: 2000px;
 }
+ 
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -25,8 +35,9 @@ code {
   --secondary-color:#F59E0B;
   --deep-blue:#1B1C57;
   --success:#10B981;
+  --success-rgb:rgb(16, 185, 129);
  --error:red;
- --primary-rgba:rgb(16, 185, 129)
+ --primary-rgb:16, 185, 129
 }
 
 header{
