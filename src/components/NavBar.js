@@ -34,6 +34,7 @@ const [getStarted, setGetStarted] = useState(false)
           <button><a href="#about">About Us</a></button>
           <button ><a href="#articles">Articles</a></button>
           <button><a href="#property">Property</a></button>
+          <button><a href="#car-rental">Dropoffs</a></button>
           <button onClick={()=>setGetStarted(true)} >Get Started</button>
         </div>
 

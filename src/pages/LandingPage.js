@@ -20,7 +20,9 @@ export default function LandingPage() {
           <Recommendations />
           <FeaturedListing />
         </div>
+        <div id="car-rental">
         <CarRentals/>
+        </div>
         <div id="about">
           <OurReviews />
         </div>
