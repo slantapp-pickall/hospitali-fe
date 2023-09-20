@@ -126,3 +126,34 @@
     }
   }
 }
+
+
+.background-colored{
+  background-color: white;
+  position: fixed;
+  right: 0;
+  left: 0;
+  height: 70px; 
+  z-index: 2;
+
+
+
+
+  
+}
+
+
+.hide-blur{
+ &::before {
+    content: "";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0%;
+    background: none !important;
+    z-index: 1;
+    border-bottom-right-radius: 0%;
+    filter: blur(20px);
+}
+}
